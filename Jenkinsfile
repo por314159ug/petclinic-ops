@@ -34,6 +34,11 @@ pipeline {
             steps {
                 bat '.\\mvnw.cmd test'
             }
+            post {
+                always {
+                    junit 'target\\surfire-reports\\*.xml'
+                }
+            }
         }
     }
 }
