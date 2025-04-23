@@ -23,5 +23,11 @@ pipeline {
                 branch: 'main'
             }
         }
+
+        stage('Build') {
+            steps {
+                bat '.\\mvnw.cmd clean package'
+            }
+        }
     }
 }
